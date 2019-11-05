@@ -41,7 +41,7 @@ resource "aws_security_group" "web" {
     }
 }
 
-resource "aws_instance" "web-1" {
+resource "aws_instance" "v1" {
     ami = "${lookup(var.amis, var.aws_region)}"
     availability_zone = "eu-west-1a"
     instance_type = "m1.small"
@@ -53,10 +53,10 @@ resource "aws_instance" "web-1" {
 
 
     tags {
-        Name = "Web Server 1"
+        Name = "v1"
     }
 }
-resource "aws_instance" "web-2" {
+resource "aws_instance" "v2" {
     ami = "${lookup(var.amis, var.aws_region)}"
     availability_zone = "eu-west-1a"
     instance_type = "m1.small"
@@ -68,7 +68,7 @@ resource "aws_instance" "web-2" {
 
 
     tags {
-        Name = "Web Server 2"
+        Name = "v2"
     }
 }
 
